@@ -1,0 +1,205 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="content">
+
+    <div class="filters">
+        <div class="catalog-dropdown">
+            <button>Фильтры</button>
+            <form class="dropdown-menu" method="get" action="">
+                <div class="form-check">
+                    <input type="checkbox" name="on_sale" id="onSale" value="on">
+                    <label for="onSale">Товары по акции</label>
+                </div>
+                <p>Сортировать:</p>
+                <div class="form-check">
+                    <input type="radio" name="order_by" id="defaultOrder" value="default" checked>
+                    <label for="defaultOrder">По умолчанию</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="order_by" id="priceAsc" value="price">
+                    <label for="priceAsc">От дешевых к дорогим</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="order_by" id="priceDesc" value="-price">
+                    <label for="priceDesc">От дорогих к дешевым</label>
+                </div>
+                <button type="submit">Применить</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="card">
+            <img src="../deps/images/goods/krossovki-muzhskie-outventure-discovery.jpg" alt="Кроссовки мужские Outventure Discovery" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Кроссовки мужские Outventure Discovery</p></a>
+                <p class="card-text">Легкие и удобные кроссовки Discovery mesh станут отличным выбором для несложных походов и увлекательных летних путешествий.</p>
+                <p class="product_id">id: 02265</p>
+                <div class="item-row">
+                    <p><s>3 999 ₽</s> ₽</p>
+                    <p><strong>1 999 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/krossovki-muzhskie-etonic-ashen.jpg" alt="Кроссовки мужские Etonic Ashen" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Кроссовки мужские Etonic Ashen</p></a>
+                <p class="card-text">Кроссовки от Etonic в узнаваемом ретродизайне идеально впишутся в ваш повседневный гардероб.</p>
+                <p class="product_id">id: 02266</p>
+                <div class="item-row">
+                    <p><s>4 999 </s> ₽</p>
+                    <p><strong>1 999 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/kedy-muzhskie-puma-caven-20.jpg" alt="Кеды мужские PUMA Caven 2.0" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Кеды мужские PUMA Caven 2.0</p></a>
+                <p class="card-text">Кеды Caven 2.0 — это утонченный вариант классического баскетбольного дизайна 80-х. Отличный вариант для спортивного образа в духе ретро.</p>
+                <p class="product_id">id: 02267</p>
+                <div class="item-row">
+                    <p><s>9 799 </s> ₽</p>
+                    <p><strong>4 899 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/kedy-muzhskie-adidas-grand-court-alpha-00-s.jpg" alt="Кеды мужские adidas Grand Court Alpha 00 S" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Кеды мужские adidas Grand Court Alpha 00 S</p></a>
+                <p class="card-text">Иногда классика — лучший выбор. Кеды в теннисном стиле от adidas станут идеальной основой для комфортных образов на каждый день.</p>
+                <p class="product_id">id: 02268</p>
+                <div class="item-row">
+                    <p><s>9 999</s> ₽</p>
+                    <p><strong>6 999 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/krossovki-uteplennye-muzhskie-erke-jogging.jpg" alt="Кроссовки утепленные мужские Erke Jogging" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Кроссовки утепленные мужские Erke Jogging</p></a>
+                <p class="card-text">Утепленные кроссовки от Erke — оптимальный вариант для долгих и комфортных прогулок зимой.</p>
+                <p class="product_id">id: 02269</p>
+                <div class="item-row">
+                    <p><s>7 599</s> ₽</p>
+                    <p><strong>6 599 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/botinki-muzhskie-tecnica-magma-20-s-mid-gtx.jpg" alt="Ботинки мужские Tecnica Magma 2.0 S Mid GTX" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Ботинки мужские Tecnica Magma 2.0 S Mid GTX</p></a>
+                <p class="card-text">Высокотехнологичные ботинки Tecnica предназначены для скоростных спусков и подъемов в условиях пересеченной местности и в горах.</p>
+                <p class="product_id">id: 02270</p>
+                <div class="item-row">
+                    <p><s>26 999</s> ₽</p>
+                    <p><strong>25 999 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/polubotinki-muzhskie-columbia-crestwood.jpg" alt="Полуботинки мужские Columbia Crestwood" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Полуботинки мужские Columbia Crestwood</p></a>
+                <p class="card-text">Универсальные полуботинки Crestwood от Columbia разработаны специально для походов и активного отдыха на природе.</p>
+                <p class="product_id">id: 02271</p>
+                <div class="item-row">
+                    <p><s>10 999</s> ₽</p>
+                    <p><strong>8 999 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/polubotinki-uteplennye-muzhskie-etonic-moba.jpg" alt="Полуботинки утепленные мужские Etonic Moba" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Полуботинки утепленные мужские Etonic Moba</p></a>
+                <p class="card-text">Ботинки от Etonic станут отличным дополнением вашей походной экипировки. Смело отправляйтесь навстречу приключениям!</p>
+                <p class="product_id">id: 02272</p>
+                <div class="item-row">
+                    <p><s>9 000</s> ₽</p>
+                    <p><strong>6 599 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/sandalii-muzhskie-outventure-crete-3.jpg" alt="Сандалии мужские Outventure Crete 3" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Сандалии мужские Outventure Crete 3</p></a>
+                <p class="card-text">Практичные сандалии на липучке от Outventure подойдут для летних походов и путешествий. Переиздание легендарной модели Crete в новом дизайне и с улучшенными характеристиками сцепления подошвы.</p>
+                <p class="product_id">id: 02273</p>
+                <div class="item-row">
+                    <p><s>3 999</s> ₽</p>
+                    <p><strong>2 799 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="../deps/images/goods/sandalii-muzhskie-northland-wandern.jpg" alt="Растение" class="product-image">
+            <div class="card-body">
+                <a href="#"><p class="card-title">Сандалии мужские Northland Wandern</p></a>
+                <p class="card-text">Сандалии Northland — отличный вариант для прогулок и путешествий в теплое время года.</p>
+                <p class="product_id">id: 02274</p>
+                <div class="item-row">
+                    <p><s>5 599</s> ₽</p>
+                    <p><strong>3 919 ₽</strong></p>
+                    <span class="badge">Скидка 10%</span>
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pagination">
+        <a href="#" class="page-link disabled">Previous</a>
+        <a href="#" class="page-link">1</a>
+        <a href="#" class="page-link">2</a>
+        <a href="#" class="page-link">3</a>
+        <a href="#" class="page-link">Next</a>
+    </div>
+
+</div>
+{% endblock content %}
+    
+
+{% block footer %}
+    <footer>
+        <p>Copyright &copy; rzh_exe 2025</p>
+    </footer>
+{% endblock footer %}
+    
