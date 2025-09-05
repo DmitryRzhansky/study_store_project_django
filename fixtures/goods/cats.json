@@ -1,0 +1,58 @@
+[
+    {
+        "model": "goods.categories",
+        "pk": 3,
+        "fields": {
+            "name": "Все товары",
+            "slug": "vse-tovary"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 4,
+        "fields": {
+            "name": "Кроссовки",
+            "slug": "krossovki"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 5,
+        "fields": {
+            "name": "Кеды",
+            "slug": "kedy"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 6,
+        "fields": {
+            "name": "Ботинки",
+            "slug": "botinki"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 7,
+        "fields": {
+            "name": "Полуботинки",
+            "slug": "polubotinki"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 8,
+        "fields": {
+            "name": "Сандалии",
+            "slug": "sandalii"
+        }
+    },
+    {
+        "model": "goods.categories",
+        "pk": 9,
+        "fields": {
+            "name": "Шлепанцы",
+            "slug": "shlepancy"
+        }
+    }
+]

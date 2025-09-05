@@ -1,0 +1,142 @@
+[
+    {
+        "model": "goods.products",
+        "pk": 1,
+        "fields": {
+            "name": "Кроссовки мужские Outventure Discovery",
+            "slug": "krossovki-muzhskie-outventure-discovery",
+            "description": "Легкие и удобные кроссовки Discovery mesh станут отличным выбором для несложных походов и увлекательных летних путешествий.",
+            "image": "goods_images/krossovki-muzhskie-outventure-discovery.jpg",
+            "price": "1999.00",
+            "discount": "0.00",
+            "quantity": 10,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 2,
+        "fields": {
+            "name": "Кроссовки мужские Etonic Ashen",
+            "slug": "krossovki-muzhskie-etonic-ashen",
+            "description": "Кроссовки от Etonic в узнаваемом ретродизайне идеально впишутся в ваш повседневный гардероб.",
+            "image": "goods_images/krossovki-muzhskie-etonic-ashen.jpg",
+            "price": "1999.00",
+            "discount": "0.00",
+            "quantity": 3,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 3,
+        "fields": {
+            "name": "Кеды мужские PUMA Caven 2.0",
+            "slug": "kedy-muzhskie-puma-caven-20",
+            "description": "Кеды Caven 2.0 — это утонченный вариант классического баскетбольного дизайна 80-х. Отличный вариант для спортивного образа в духе ретро.",
+            "image": "goods_images/kedy-muzhskie-puma-caven-20.jpg",
+            "price": "4899.00",
+            "discount": "0.00",
+            "quantity": 10,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 4,
+        "fields": {
+            "name": "Кеды мужские adidas Grand Court Alpha 00 S",
+            "slug": "kedy-muzhskie-adidas-grand-court-alpha-00-s",
+            "description": "Иногда классика — лучший выбор. Кеды в теннисном стиле от adidas станут идеальной основой для комфортных образов на каждый день.",
+            "image": "goods_images/kedy-muzhskie-adidas-grand-court-alpha-00-s.jpg",
+            "price": "6999.00",
+            "discount": "0.00",
+            "quantity": 3,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 5,
+        "fields": {
+            "name": "Кроссовки утепленные мужские Erke Jogging",
+            "slug": "krossovki-uteplennye-muzhskie-erke-jogging",
+            "description": "Утепленные кроссовки от Erke — оптимальный вариант для долгих и комфортных прогулок зимой.",
+            "image": "goods_images/krossovki-uteplennye-muzhskie-erke-jogging.jpg",
+            "price": "6599.00",
+            "discount": "0.00",
+            "quantity": 50,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 6,
+        "fields": {
+            "name": "Ботинки мужские Tecnica Magma 2.0 S Mid GTX",
+            "slug": "botinki-muzhskie-tecnica-magma-20-s-mid-gtx",
+            "description": "Высокотехнологичные ботинки Tecnica предназначены для скоростных спусков и подъемов в условиях пересеченной местности и в горах.",
+            "image": "goods_images/botinki-muzhskie-tecnica-magma-20-s-mid-gtx.jpg",
+            "price": "25999.00",
+            "discount": "0.00",
+            "quantity": 3,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 7,
+        "fields": {
+            "name": "Полуботинки мужские Columbia Crestwood",
+            "slug": "polubotinki-muzhskie-columbia-crestwood",
+            "description": "Универсальные полуботинки Crestwood от Columbia разработаны специально для походов и активного отдыха на природе.",
+            "image": "goods_images/polubotinki-muzhskie-columbia-crestwood.jpg",
+            "price": "8999.00",
+            "discount": "0.00",
+            "quantity": 10,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 8,
+        "fields": {
+            "name": "Полуботинки утепленные мужские Etonic Moba",
+            "slug": "polubotinki-uteplennye-muzhskie-etonic-moba",
+            "description": "Ботинки от Etonic станут отличным дополнением вашей походной экипировки. Смело отправляйтесь навстречу приключениям!",
+            "image": "goods_images/polubotinki-uteplennye-muzhskie-etonic-moba.jpg",
+            "price": "6599.00",
+            "discount": "0.00",
+            "quantity": 25,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 9,
+        "fields": {
+            "name": "Сандалии мужские Outventure Crete 3",
+            "slug": "sandalii-muzhskie-outventure-crete-3",
+            "description": "Практичные сандалии на липучке от Outventure подойдут для летних походов и путешествий. Переиздание легендарной модели Crete в новом дизайне и с улучшенными характеристиками сцепления подошвы.",
+            "image": "goods_images/sandalii-muzhskie-outventure-crete-3.jpg",
+            "price": "2799.00",
+            "discount": "0.00",
+            "quantity": 500,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 10,
+        "fields": {
+            "name": "Сандалии мужские Northland Wandern",
+            "slug": "sandalii-muzhskie-northland-wandern",
+            "description": "Сандалии Northland — отличный вариант для прогулок и путешествий в теплое время года.",
+            "image": "goods_images/sandalii-muzhskie-northland-wandern.jpg",
+            "price": "3919.00",
+            "discount": "0.00",
+            "quantity": 900,
+            "category": 8
+        }
+    }
+]
