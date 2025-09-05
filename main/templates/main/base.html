@@ -80,13 +80,9 @@
         <li class="nav-item dropdown">
             <span>Каталог ▾</span>
             <ul class="dropdown-menu">
-                <li><a href="{% url 'catalog:index' %}">Все товары</a></li>
-                <li><a href="{% url 'catalog:index' %}">Кроссовки</a></li>
-                <li><a href="{% url 'catalog:index' %}">Кеды</a></li>
-                <li><a href="{% url 'catalog:index' %}">Ботинки</a></li>
-                <li><a href="{% url 'catalog:index' %}">Полуботинки</a></li>
-                <li><a href="{% url 'catalog:index' %}">Сандалии</a></li>
-                <li><a href="{% url 'catalog:index' %}">Шлепанцы</a></li>
+                {% for category in categories %}
+                 <li><a href="{% url 'catalog:index' %}">{{ category.name }}</a></li>
+                {% endfor %}
             </ul>
         </li>
     </ul>
