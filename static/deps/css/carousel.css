@@ -1,0 +1,64 @@
+/* Скролл и карусель */
+.product-carousel {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0.5rem;
+}
+
+.product-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.product-card {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    min-width: 100px;
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+}
+
+.product-image-container {
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.badge-banner {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: var(--deep-bordeaux);
+    color: var(--gold-accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.product-info {
+    padding: 0.3rem 0.5rem;
+}
+
+.product-title {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.product-title a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.product-price {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}

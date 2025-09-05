@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Переменные и шрифты -->
+    <link rel="stylesheet" href="{% static 'deps/css/variables.css' %}">
+
+    <!-- Базовые стили -->
+    <link rel="stylesheet" href="{% static 'deps/css/base.css' %}">
+
+    <!-- Шапка и навигация -->
+    <link rel="stylesheet" href="{% static 'deps/css/header.css' %}">
+
+    <!-- Боковая панель и каталог -->
+    <link rel="stylesheet" href="{% static 'deps/css/sidebar.css' %}">
+
+    <!-- Основной контент и карточки товаров -->
+    <link rel="stylesheet" href="{% static 'deps/css/content.css' %}">
+
+    <!-- Корзина и кнопки оформления -->
+    <link rel="stylesheet" href="{% static 'deps/css/cart.css' %}">
+
+    <!-- Подвал -->
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}">
+
+    <!-- Модальные окна -->
+    <link rel="stylesheet" href="{% static 'deps/css/modal.css' %}">
+
+    <!-- Анимации -->
+    <link rel="stylesheet" href="{% static 'deps/css/animations.css' %}">
+
+    <!-- Карусель и скролл -->
+    <link rel="stylesheet" href="{% static 'deps/css/carousel.css' %}">
+        <title>{{ title }}</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="{% url "index" %}" class="logo">rzh_exe</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <span>Информация ▾</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Доставка и оплата</a></li>
+                            <li><a href="#">Контактная информация</a></li>
+                            <li><a href="{% url "about" %}">Про нас</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="carts/cart.html">Корзина</a></li>
+                    <li><a href="users/login.html">Войти</a></li>
+                    <li class="nav-item dropdown">
+                        <span>Мой профиль ▾</span>
+                        <ul class="dropdown-menu">
+                            <li><a href="carts/cart.html">Корзина</a></li>
+                            <li><a href="users/profile.html">Личный кабинет</a></li>
+                            <li><a href="#">Админ панель</a></li>
+                            <li><hr></li>
+                            <li><a href="#">Выйти</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <form class="search-form">
+                <input type="search" placeholder="Search" aria-label="Search">
+                <button type="submit">Поиск</button>
+            </form>
+        </div>
+    </header>
+
+<div class="sidebar">
+    <!-- Каталог как dropdown -->
+    <ul class="nav-list">
+        <li class="nav-item dropdown">
+            <span>Каталог ▾</span>
+            <ul class="dropdown-menu">
+                <li><a href="goods/catalog.html">Все товары</a></li>
+                <li><a href="goods/catalog.html">Кроссовки</a></li>
+                <li><a href="goods/catalog.html">Кеды</a></li>
+                <li><a href="goods/catalog.html">Ботинки</a></li>
+                <li><a href="goods/catalog.html">Полуботинки</a></li>
+                <li><a href="goods/catalog.html">Сандалии</a></li>
+                <li><a href="goods/catalog.html">Шлепанцы</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Корзина отдельно, чтобы не пропадала -->
+    <div class="cart-icon">
+        <button id="modalButton">🛒 <span id="goods-in-cart-count">0</span></button>
+    </div>
+</div>
+
+            <div class="cart-icon">
+                <button id="modalButton">🛒 <span id="goods-in-cart-count">0</span></button>
+            </div>
+        </div>
+
+        <div class="content">
+            
+            {% block content %}
+                
+            {% endblock content %}
+                
+        </div>
+    </section>
+
+    <!-- Модальное окно корзины -->
+    <div class="modal" id="exampleModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="text-center mb-4">Корзина</h3>
+            <div id="cart-items-container">
+                <div class="cart-item">
+                    <div class="item-row">
+                        <div class="item-quantity">
+                            <button class="decrement" data-cart-id="" data-cart-change-url="">-</button>
+                            <input type="text" class="number" value="1" readonly>
+                            <button class="increment" data-cart-id="" data-cart-change-url="">+</button>
+                        </div>
+                        <div class="item-price">
+                            <p>x 100.00 = </p>
+                        </div>
+                        <div class="item-total">
+                            <strong>100.00 $</strong>
+                        </div>
+                        <div class="item-remove">
+                            <a href="#" class="remove-from-cart" data-cart-id="">🗑️</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-footer">
+                    <p>Итого <strong>1</strong> товар(а) на сумму <strong>100.00 $</strong></p>
+                </div>
+            </div>
+            <a class="checkout-button" href="orders/create_order.html">Оформить заказ</a>
+        </div>
+    </div>
+
+    
+    {% block footer %}
+        
+    {% endblock footer %}
+        
+
+<!-- Скрипты -->
+    <script src="{% static 'deps/js/jquery/jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'deps/js/jquery-events.js' %}"></script>
+    <script src="{% static 'deps/js/jquery-ajax.js' %}"></script>
+    <script src="{% static 'deps/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'deps/js/modal.js' %}"></script>
+</body>
+
+</html>

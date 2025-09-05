@@ -1,0 +1,118 @@
+/* Header */
+.header-container {
+    background-color: var(--dark-emerald);
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--gold-accent);
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-item span {
+    transition: color 0.3s;
+}
+
+.nav-item span:hover {
+    color: var(--gold-accent);
+    text-shadow: 0 0 5px var(--gold-accent);
+}
+
+/* Dropdown */
+.nav-item.dropdown .dropdown-menu,
+.catalog-dropdown ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--dark-emerald);
+    border-radius: 6px;
+    min-width: 220px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+    flex-direction: column;
+    z-index: 200;
+}
+
+.nav-item.dropdown:hover .dropdown-menu,
+.catalog-dropdown:hover ul {
+    display: flex;
+}
+
+.dropdown-menu li a,
+.catalog-dropdown ul li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover,
+.catalog-dropdown ul li a:hover {
+    background-color: var(--hover-dark);
+    color: var(--gold-accent);
+}
+
+/* Search */
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-form input {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #555;
+    outline: none;
+    background-color: var(--dark-gray);
+    color: var(--text-light);
+    transition: border 0.3s;
+}
+
+.search-form input:focus {
+    border-color: var(--gold-accent);
+}
+
+.search-form button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--deep-bordeaux);
+    color: var(--gold-accent);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.search-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}

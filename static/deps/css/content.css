@@ -1,0 +1,44 @@
+/* Content */
+.content {
+    margin-left: 280px;
+    padding: 2rem;
+}
+
+.content h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--gold-accent);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* Карточки товаров */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+.product-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+}

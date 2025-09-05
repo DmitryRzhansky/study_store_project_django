@@ -1,0 +1,14 @@
+/* Шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;500&display=swap');
+
+/* Цвета */
+:root {
+    --deep-bordeaux: #4B1D2F;
+    --dark-emerald: #1F3A3A;
+    --gold-accent: #D4AF37;
+    --dark-gray: #1C1C1C;
+    --text-light: #F5F5F5;
+    --bg-light: #2A2A2A;
+    --hover-dark: #331F28;
+    --card-bg: #2E2E2E;
+}
