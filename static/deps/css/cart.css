@@ -4,7 +4,8 @@
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 6px var(--shadow-light);
 }
 
 .item-row {
@@ -15,27 +16,27 @@
 
 .item-quantity button {
     padding: 0.4rem 0.8rem;
-    background-color: var(--deep-bordeaux);
+    background-color: var(--primary-color);
     border: none;
-    color: var(--gold-accent);
+    color: #fff;
     cursor: pointer;
     border-radius: 6px;
     font-weight: 600;
-    transition: transform 0.2s, box-shadow 0.3s;
+    transition: background 0.2s, transform 0.2s;
 }
 
 .item-quantity button:hover {
+    background-color: var(--primary-hover);
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
 .item-quantity input {
     width: 50px;
     text-align: center;
-    border: 1px solid var(--gold-accent);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
-    background-color: var(--dark-gray);
-    color: var(--gold-accent);
+    background-color: #fff;
+    color: var(--dark-gray);
     padding: 0.3rem;
 }
 
@@ -44,15 +45,15 @@
     display: inline-block;
     margin-top: 1.2rem;
     padding: 0.8rem 1.5rem;
-    background-color: var(--gold-accent);
-    color: var(--dark-gray);
+    background-color: var(--secondary-color);
+    color: #fff;
     text-decoration: none;
     border-radius: 10px;
     font-weight: 700;
-    transition: transform 0.2s, box-shadow 0.3s;
+    transition: background 0.2s, transform 0.2s;
 }
 
 .checkout-button:hover {
+    background-color: #15803d;
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }

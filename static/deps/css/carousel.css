@@ -17,7 +17,8 @@
     min-width: 100px;
     border-radius: 10px;
     background-color: var(--card-bg);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 6px var(--shadow-light);
     flex-shrink: 0;
 }
 
@@ -36,8 +37,8 @@
     position: absolute;
     top: 5px;
     left: 5px;
-    background-color: var(--deep-bordeaux);
-    color: var(--gold-accent);
+    background-color: var(--primary-color);
+    color: #fff;
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 0.75rem;
@@ -53,7 +54,7 @@
 }
 
 .product-title a {
-    color: var(--text-light);
+    color: var(--dark-gray);
     text-decoration: none;
 }
 
@@ -61,4 +62,5 @@
     margin: 0;
     font-size: 0.9rem;
     font-weight: bold;
+    color: var(--primary-color);
 }
