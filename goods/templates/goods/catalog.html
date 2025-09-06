@@ -36,7 +36,11 @@
 
         {% for product in goods %}
             <div class="card">
-                <img src="{% static product.image %}" alt="Кроссовки мужские Outventure Discovery" class="product-image">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                {% else%}
+                    <img src="{% static 'deps/images/not_found_image.png' %}" alt="..." class="product-image">
+                {% endif %}
                 <div class="card-body">
                     <a href="#"><p class="card-title">{{ product.name }}</p></a>
                     <p class="card-text">{{ product.description }}</p>
