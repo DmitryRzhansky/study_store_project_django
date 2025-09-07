@@ -1,0 +1,108 @@
+/* Catalog Styles */
+
+/* Сетка товаров */
+.catalog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start; /* выравнивание влево */
+}
+
+/* Карточка товара */
+.catalog-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: 360px;           /* увеличиваем ширину */
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.catalog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Изображение товара */
+.catalog-card img {
+    width: 100%;
+    height: 380px;      /* увеличиваем высоту изображения */
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 12px 12px 0 0;
+}
+
+/* Контент карточки */
+.catalog-card .card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Название товара */
+.catalog-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Описание */
+.catalog-card .card-text {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    flex-grow: 1;
+}
+
+/* Блок цен и кнопка */
+.catalog-card .item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Блок цен */
+.catalog-card .price-block {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+/* Старая цена */
+.catalog-card .old-price {
+    color: #888;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* Новая цена */
+.catalog-card .new-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    white-space: nowrap;
+}
+
+/* Бейдж скидки */
+.catalog-card .badge {
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* Кнопка */
+.catalog-card .btn.add-to-cart {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.95rem;
+}

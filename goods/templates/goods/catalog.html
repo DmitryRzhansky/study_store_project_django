@@ -1,10 +1,10 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-
 {% block content %}
-    <div class="content">
+<div class="content">
 
+    <!-- Фильтры -->
     <div class="filters">
         <div class="catalog-dropdown">
             <button>Фильтры</button>
@@ -13,6 +13,7 @@
                     <input type="checkbox" name="on_sale" id="onSale" value="on">
                     <label for="onSale">Товары по акции</label>
                 </div>
+
                 <p>Сортировать:</p>
                 <div class="form-check">
                     <input type="radio" name="order_by" id="defaultOrder" value="default" checked>
@@ -26,46 +27,49 @@
                     <input type="radio" name="order_by" id="priceDesc" value="-price">
                     <label for="priceDesc">От дорогих к дешевым</label>
                 </div>
+
                 <button type="submit">Применить</button>
             </form>
         </div>
     </div>
 
-    <div class="product-grid">
-
-
+    <!-- Сетка товаров -->
+    <div class="product-grid catalog-grid">
         {% for product in goods %}
-            <div class="card">
-                {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
-                {% else%}
-                    <img src="{% static 'deps/images/not_found_image.png' %}" alt="..." class="product-image">
-                {% endif %}
-            <div class="card-body">
-                <a href="#"><p class="card-title">{{ product.name }}</p></a>
-                <p class="card-text">{{ product.description }}</p>
-                <p class="product_id">id: {{ product.display_id }}</p>
-
-            <div class="item-row">
-                {% if product.discount %}
-                    <div class="price-block">
-                        <span class="old-price"><s>{{ product.price }}</s> ₽</span>
-                        <span class="new-price">{{ product.sell_price }} ₽</span>
-                        <span class="badge">-{{ product.discount }}%</span>
-                     </div>
-                {% else %}
-                    <div class="price-block">
-                        <span class="new-price">{{ product.price }} ₽</span>
-                    </div>
+        <div class="catalog-card">
+            <!-- Изображение товара -->
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+                <img src="{% static 'deps/images/not_found_image.png' %}" alt="Изображение отсутствует">
             {% endif %}
-                <a href="#" class="btn add-to-cart">В корзину</a>
-        </div>
-    </div>
 
+            <!-- Контент карточки -->
+            <div class="card-body">
+                <p class="card-title">{{ product.name }}</p>
+                <p class="card-text">{{ product.description }}</p>
+
+                <div class="item-row">
+                    <!-- Блок с ценами -->
+                    <div class="price-block">
+                        {% if product.discount %}
+                            <span class="old-price">{{ product.price }} ₽</span>
+                            <span class="new-price">{{ product.sell_price }} ₽</span>
+                            <span class="badge">-{{ product.discount }}%</span>
+                        {% else %}
+                            <span class="new-price">{{ product.price }} ₽</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Кнопка добавления в корзину -->
+                    <a href="#" class="btn add-to-cart">В корзину</a>
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
 
+    <!-- Пагинация -->
     <div class="pagination">
         <a href="#" class="page-link disabled">Previous</a>
         <a href="#" class="page-link">1</a>
@@ -76,11 +80,9 @@
 
 </div>
 {% endblock content %}
-    
 
 {% block footer %}
-    <footer>
-        <p>Copyright &copy; rzh_exe 2025</p>
-    </footer>
+<footer>
+    <p>Copyright &copy; rzh_exe 2025</p>
+</footer>
 {% endblock footer %}
-    

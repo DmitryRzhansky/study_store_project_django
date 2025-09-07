@@ -1,43 +1,57 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-
 {% block content %}
-        <div class="content">
-        <h1>Товар</h1>
+<div class="content">
+    <div class="card-wrapper">
+        <div class="card">
+            <!-- Изображение -->
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image-fixed">
+            {% else %}
+                <img src="{% static 'deps/images/not_found_image.png' %}" alt="Изображение отсутствует" class="product-image-fixed">
+            {% endif %}
 
-        <div class="cart-item">
-            <div class="item-row" style="gap: 1.5rem; flex-wrap: wrap;">
-                <!-- Изображение товара -->
-                <div>
-                    <img src="../deps/images/goods/1.jpg"
-                        class="product-image product-image-fixed" 
-                        data-bs-toggle="modal" data-bs-target="#imageModal1" alt="Товар">
+            <!-- Контент -->
+            <div class="card-body">
+                <p class="card-title">{{ product.name }}</p>
+                <p class="card-text">{{ product.description }}</p>
+
+                <div class="item-row">
+                    <!-- Блок цен -->
+                    <div class="price-block">
+                        {% if product.discount %}
+                            <span class="old-price">{{ product.price }} ₽</span>
+                            <span class="new-price">{{ product.sell_price }} ₽</span>
+                            <span class="badge">-{{ product.discount }}%</span>
+                        {% else %}
+                            <span class="new-price">{{ product.price }} ₽</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Кнопка -->
+                    <button class="checkout-button add-to-cart">В корзину</button>
                 </div>
-
-                <!-- ID товара -->
-                <div>
-                    <p class="product_id mt-3">id: 002654</p>
-                </div>
-
-                <!-- Описание и кнопка -->
-                <div>
-                    <p>Цена: <strong>1</strong></p>
-                    <h5>name</h5>
-                    <p>about</p>
-                    <button class="checkout-button add-to-cart">Добавить в корзину</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Модальное окно изображения -->
-        <div class="modal" id="imageModal1">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <img src="../deps/images/goods/1.jpg" 
-                     class="product-image-fixed" alt="Изображение товара">
             </div>
         </div>
     </div>
+</div>
+
+
+    <!-- Модальное окно для изображения -->
+    <div class="modal" id="imageModal1">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            {% if product.image %}
+                <img src="{{ product.image.url }}" 
+                     class="product-image-fixed" 
+                     alt="{{ product.name }}">
+            {% else %}
+                <img src="{% static 'deps/images/not_found_image.png' %}" 
+                     class="product-image-fixed" 
+                     alt="Изображение отсутствует">
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock content %}
-    
