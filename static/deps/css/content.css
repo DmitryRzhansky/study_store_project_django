@@ -107,3 +107,53 @@
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Ряд внутри карточки */
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;     
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Блок с ценами */
+.price-block {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex: 1;             
+    min-width: 0;        
+    flex-wrap: wrap;     
+}
+
+/* Старая цена */
+.price-block .old-price {
+    color: #888;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* Новая цена */
+.price-block .new-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+/* Бейдж скидки */
+.price-block .badge {
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.4rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.card {
+    width: 340px; 
+}
