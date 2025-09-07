@@ -1,187 +1,30 @@
-/* Content */
+/* ------------------------------- */
+/* Контент страницы продукта */
 .content {
     margin-left: 280px;
     padding: 2rem;
 }
 
-.content h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Карточки товаров */
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.card {
-    background-color: var(--card-bg);
-    padding: 1rem;
-    border-radius: 12px;
-    width: 320px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 6px var(--shadow-light);
-}
-
-.product-image {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px var(--shadow-light);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px var(--shadow-light);
-}
-
-/* Центрирование intro-блока */
-.intro-wrapper {
+/* Центрирование карточки */
+.card-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 240px);
     padding: 2rem;
-}
-
-/* Карточка с описанием */
-.intro-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 6px 20px var(--shadow-light);
-    border-radius: 16px;
-    padding: 2.5rem;
-    max-width: 720px;
-    text-align: left;
-    animation: fadeIn 0.6s ease;
-}
-
-/* Заголовок */
-.intro-card h1 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-/* Текст */
-.intro-card p {
-    margin-bottom: 1rem;
-    color: var(--dark-gray);
-    font-size: 1.1rem;
-}
-
-/* Список */
-.intro-card ul {
-    margin: 1rem 0 1.5rem 1.5rem;
-    list-style: none;
-    padding: 0;
-}
-
-.intro-card ul li {
-    margin-bottom: 0.6rem;
-    padding-left: 1.8rem;
-    position: relative;
-    font-size: 1rem;
-    color: var(--dark-gray);
-}
-
-.intro-card ul li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
-/* Анимация появления */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Ряд внутри карточки */
-.item-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;     
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-/* Блок с ценами */
-.price-block {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    flex: 1;             
-    min-width: 0;        
-    flex-wrap: wrap;     
-}
-
-/* Старая цена */
-.price-block .old-price {
-    color: #888;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-/* Новая цена */
-.price-block .new-price {
-    font-weight: 700;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    white-space: nowrap;
-}
-
-/* Бейдж скидки */
-.price-block .badge {
-    background-color: var(--secondary-color);
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.15rem 0.4rem;
-    border-radius: 6px;
-    white-space: nowrap;
 }
 
 /* Карточка товара */
 .card {
-    width: 500px;
-    max-width: 95%;                    
+    margin-right: 300px;
     background-color: var(--card-bg);
-    border-radius: 16px;
     border: 1px solid var(--border-color);
+    border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    width: 500px;
+    max-width: 95%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Обёртка для карточки */
-.card-wrapper {
-    display: flex;
-    justify-content: center;   
-    padding: 2rem;             
-}
-
-
-/* Добавляем отступ слева и снизу*/
-.card-wrapper .card {
-    margin-right: 350px;          
-    margin-top: -0px;   
-    width: 500px;
-    max-width: 95%;
 }
 
 .card:hover {
@@ -189,14 +32,15 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* Изображение */
-.card .product-image-fixed {
+/* Изображение товара */
+.product-image-fixed {
     width: 100%;
     height: 450px;
     object-fit: cover;
+    border-radius: 12px 12px 0 0;
 }
 
-/* Контент внутри карточки */
+/* Контент карточки */
 .card-body {
     padding: 1rem 1.2rem;
     display: flex;
@@ -211,14 +55,14 @@
     color: var(--primary-color);
 }
 
-/* Описание */
+/* Описание товара */
 .card-body .card-text {
     font-size: 0.95rem;
     color: var(--dark-gray);
-    flex-grow: 1;       /* занимает оставшееся место */
+    flex-grow: 1;
 }
 
-/* Блок цен и кнопка */
+/* Ряд с ценой и кнопкой */
 .card-body .item-row {
     display: flex;
     justify-content: space-between;
@@ -234,14 +78,13 @@
     align-items: center;
     gap: 0.4rem;
     flex-wrap: wrap;
-    flex: 1;
-    min-width: 0;
 }
 
 /* Старая цена */
 .price-block .old-price {
     color: #888;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    text-decoration: line-through; /* зачеркнутая */
     white-space: nowrap;
 }
 
@@ -249,7 +92,7 @@
 .price-block .new-price {
     font-weight: 700;
     color: var(--primary-color);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     white-space: nowrap;
 }
 
@@ -264,8 +107,45 @@
     white-space: nowrap;
 }
 
-/* Кнопка */
+/* Кнопка "В корзину" */
 .card-body .checkout-button.add-to-cart {
     padding: 0.5rem 0.9rem;
     font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Модальное окно изображения */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.modal-content img {
+    width: auto;
+    max-height: 80vh;
+    border-radius: 12px;
+}
+
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
 }

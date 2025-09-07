@@ -5,14 +5,20 @@
 <div class="content">
     <div class="card-wrapper">
         <div class="card">
-            <!-- Изображение -->
-            {% if product.image %}
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image-fixed">
-            {% else %}
-                <img src="{% static 'deps/images/not_found_image.png' %}" alt="Изображение отсутствует" class="product-image-fixed">
-            {% endif %}
+            <!-- Обертка изображения для бейджа -->
+            <div class="image-wrapper">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image-fixed">
+                {% else %}
+                    <img src="{% static 'deps/images/not_found_image.png' %}" alt="Изображение отсутствует" class="product-image-fixed">
+                {% endif %}
 
-            <!-- Контент -->
+                {% if product.discount %}
+                    <span class="badge discount-badge">-{{ product.discount }}%</span>
+                {% endif %}
+            </div>
+
+            <!-- Контент карточки -->
             <div class="card-body">
                 <p class="card-title">{{ product.name }}</p>
                 <p class="card-text">{{ product.description }}</p>
@@ -23,35 +29,28 @@
                         {% if product.discount %}
                             <span class="old-price">{{ product.price }} ₽</span>
                             <span class="new-price">{{ product.sell_price }} ₽</span>
-                            <span class="badge">-{{ product.discount }}%</span>
                         {% else %}
                             <span class="new-price">{{ product.price }} ₽</span>
                         {% endif %}
                     </div>
 
                     <!-- Кнопка -->
-                    <button class="checkout-button add-to-cart">В корзину</button>
+                    <button class="btn add-to-cart">В корзину</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-    <!-- Модальное окно для изображения -->
-    <div class="modal" id="imageModal1">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            {% if product.image %}
-                <img src="{{ product.image.url }}" 
-                     class="product-image-fixed" 
-                     alt="{{ product.name }}">
-            {% else %}
-                <img src="{% static 'deps/images/not_found_image.png' %}" 
-                     class="product-image-fixed" 
-                     alt="Изображение отсутствует">
-            {% endif %}
-        </div>
+<!-- Модальное окно для изображения -->
+<div class="modal" id="imageModal1">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        {% if product.image %}
+            <img src="{{ product.image.url }}" class="product-image-fixed" alt="{{ product.name }}">
+        {% else %}
+            <img src="{% static 'deps/images/not_found_image.png' %}" class="product-image-fixed" alt="Изображение отсутствует">
+        {% endif %}
     </div>
 </div>
 {% endblock content %}
