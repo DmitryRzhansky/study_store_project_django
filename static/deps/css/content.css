@@ -179,7 +179,7 @@
 /* Добавляем отступ слева и снизу*/
 .card-wrapper .card {
     margin-right: 350px;          
-    margin-top: -50px;   
+    margin-top: -0px;   
     width: 500px;
     max-width: 95%;
 }

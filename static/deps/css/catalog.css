@@ -1,11 +1,16 @@
-/* Catalog Styles */
+/* Контейнер каталога */
+.catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-/* Сетка товаров */
+/* Сетка карточек */
 .catalog-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    justify-content: flex-start; /* выравнивание влево */
+    justify-content: flex-start;
 }
 
 /* Карточка товара */
@@ -13,13 +18,12 @@
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    width: 360px;           /* увеличиваем ширину */
-    max-width: 95%;
+    width: 360px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
 }
 
 .catalog-card:hover {
@@ -27,31 +31,50 @@
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-/* Изображение товара */
-.catalog-card img {
+/* Обертка изображения для бейджа скидки */
+.image-wrapper {
+    position: relative;
+}
+
+.image-wrapper img {
     width: 100%;
-    height: 380px;      /* увеличиваем высоту изображения */
+    height: 380px;
     object-fit: cover;
     border-bottom: 1px solid var(--border-color);
     border-radius: 12px 12px 0 0;
 }
 
-/* Контент карточки */
-.catalog-card .card-body {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+/* Бейдж скидки на изображении */
+.discount-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    z-index: 10;
 }
 
-/* Название товара */
+/* Контент карточки */
+.catalog-card .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    min-height: 200px;
+}
+
+/* Название и описание */
 .catalog-card .card-title {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
+    margin-bottom: 0.3rem;
 }
 
-/* Описание */
 .catalog-card .card-text {
     font-size: 0.95rem;
     color: var(--dark-gray);
@@ -64,7 +87,6 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
 }
 
 /* Блок цен */
@@ -79,6 +101,7 @@
 .catalog-card .old-price {
     color: #888;
     font-size: 0.95rem;
+    text-decoration: line-through;
     white-space: nowrap;
 }
 
@@ -90,19 +113,10 @@
     white-space: nowrap;
 }
 
-/* Бейдж скидки */
-.catalog-card .badge {
-    background-color: var(--secondary-color);
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.2rem 0.5rem;
-    border-radius: 6px;
-    white-space: nowrap;
-}
-
-/* Кнопка */
-.catalog-card .btn.add-to-cart {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.95rem;
+/* Кнопка “В корзину” */
+.catalog-card .btn.add-to-cart,
+.catalog-card .checkout-button.add-to-cart {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    flex-shrink: 0;
 }
