@@ -47,8 +47,8 @@
                 </div>
 
                 <div class="card-body">
-                    <p class="card-title"><a href="{% url "catalog:product" product.slug %}">{{ product.name }}</a></p>
-                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-title"><a href="{% url "catalog:product" product.slug %}">{{ product.name|truncatechars:25 }}</a></p>
+                    <p class="card-text">{{ product.description|truncatechars:65}}</p>
 
                     <div class="item-row">
                         <div class="price-block">
@@ -81,13 +81,20 @@
 
         <!-- Номера страниц -->
         {% for page in goods.paginator.page_range %}
-        <li class="{% if goods.number == page %}active{% endif %}">
-            <a href="{% url 'catalog:index' slug_url page %}" 
-               class="page-link {% if goods.number == page %}active{% endif %}">
-                {{ page }}
-            </a>
-        </li>
+
+            {% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
+            
+                <li class="{% if goods.number == page %}active{% endif %}">
+                    <a href="{% url 'catalog:index' slug_url page %}" 
+                    class="page-link {% if goods.number == page %}active{% endif %}">
+                        {{ page }}
+                    </a>
+                </li>
+
+            {% endif %}
+
         {% endfor %}
+
 
         <!-- Кнопка "Вперед" -->
         <li class="{% if not goods.has_next %}disabled{% endif %}">
