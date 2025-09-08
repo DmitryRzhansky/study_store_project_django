@@ -8,9 +8,15 @@
     <div class="filters">
         <div class="catalog-dropdown">
             <button>Фильтры</button>
-            <form class="dropdown-menu" method="get" action="{% url "catalog:index" slug_url %}">
+                <form class="dropdown-menu" method="get" 
+                    action="{% if request.GET.q %}{% url 'catalog:search' %}{% else %}{% url 'catalog:index' slug_url %}{% endif %}">
                 <div class="form-check">
                     <input type="checkbox" name="on_sale" id="onSale" value="on" {% if request.GET.on_sale == 'on' %} checked {% endif %}>
+                    
+                    {% if request.GET.q %}
+                    <input type='hidden' name='q' value='{{ request.GET.q} }'>
+                    {% endif %}
+                        
                     <label for="onSale">Товары по акции</label>
                 </div>
                 <p>Сортировать:</p>
@@ -50,9 +56,11 @@
                 </div>
 
                 <div class="card-body">
+                    
                     <p class="card-title"><a href="{% url "catalog:product" product.slug %}">{{ product.name|truncatechars:25 }}</a></p>
                     <p class="card-text">{{ product.description|truncatechars:65}}</p>
-
+                    <p class="card-text"><b>id: </b>{{ product.display_id }}</p>
+                    
                     <div class="item-row">
                         <div class="price-block">
                             {% if product.discount %}

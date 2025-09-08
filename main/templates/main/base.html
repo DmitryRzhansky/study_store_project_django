@@ -72,8 +72,8 @@
                     </li>
                 </ul>
             </nav>
-            <form class="search-form">
-                <input type="search" placeholder="Search" aria-label="Search">
+            <form class="search-form" role='search' action='{% url "catalog:search" %}'' method='get'>
+                <input type="search" placeholder="Search" aria-label="Search" name='q'>
                 <button type="submit">Поиск</button>
             </form>
         </div>
