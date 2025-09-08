@@ -79,30 +79,29 @@
         </div>
     </header>
 
-<div class="sidebar">
-    <!-- Каталог как dropdown -->
-    <ul class="nav-list">
-        <li class="nav-item dropdown">
-            <span>Каталог ▾</span>
-            <ul class="dropdown-menu">
-                {% tag_categories as categories %}
-                {% for category in categories %}
-                 <li><a href="{% url 'catalog:index' category.slug %}">{{ category.name }}</a></li>
-                {% endfor %}
-            </ul>
-        </li>
-    </ul>
+<div class="sidebar-container">
+    <div class="sidebar">
+        <ul class="nav-list">
+            <li class="nav-item dropdown">
+                <input type="checkbox" id="catalog-toggle" class="dropdown-toggle-checkbox">
+                <label for="catalog-toggle" class="dropdown-label">Каталог ▾</label>
+                <ul class="dropdown-menu">
+                    {% tag_categories as categories %}
+                    {% for category in categories %}
+                        <li><a href="{% url 'catalog:index' category.slug %}">{{ category.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <!-- Корзина отдельно, чтобы не пропадала -->
-    <div class="cart-icon">
-        <button id="modalButton">🛒 <span id="goods-in-cart-count">0</span></button>
+    <div class="cart-container">
+        <button class="cart-button">
+            🛒 <span id="goods-in-cart-count">0</span>
+        </button>
     </div>
 </div>
 
-            <div class="cart-icon">
-                <button id="modalButton">🛒 <span id="goods-in-cart-count">0</span></button>
-            </div>
-        </div>
 
         <div class="content">
             
