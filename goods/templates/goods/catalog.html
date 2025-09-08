@@ -9,20 +9,20 @@
             <button>Фильтры</button>
             <form class="dropdown-menu" method="get" action="{% url "catalog:index" slug_url %}">
                 <div class="form-check">
-                    <input type="checkbox" name="on_sale" id="onSale" value="on">
+                    <input type="checkbox" name="on_sale" id="onSale" value="on" {% if request.GET.on_sale == 'on' %} checked {% endif %}>
                     <label for="onSale">Товары по акции</label>
                 </div>
                 <p>Сортировать:</p>
                 <div class="form-check">
-                    <input type="radio" name="order_by" id="defaultOrder" value="default" checked>
+                    <input type="radio" name="order_by" id="defaultOrder" value="default" checked {% if not request.GET.order_by or request.GET.order_by == 'default' %} checked {% endif %}>
                     <label for="defaultOrder">По умолчанию</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" name="order_by" id="priceAsc" value="price">
+                    <input type="radio" name="order_by" id="priceAsc" value="price" {% if request.GET.order_by == 'price' %} checked {% endif %}>
                     <label for="priceAsc">От дешевых к дорогим</label>
                 </div>
                 <div class="form-check">
-                    <input type="radio" name="order_by" id="priceDesc" value="-price">
+                    <input type="radio" name="order_by" id="priceDesc" value="-price" {% if request.GET.order_by == '-price' %} checked {% endif %}>
                     <label for="priceDesc">От дорогих к дешевым</label>
                 </div>
                 <button type="submit">Применить</button>
