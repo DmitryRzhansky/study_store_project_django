@@ -5,6 +5,7 @@ from goods.models import Products
 from goods.utils import q_search
 
 
+
 def catalog(request, category_slug=None):
     
     page = request.GET.get('page', 1)
