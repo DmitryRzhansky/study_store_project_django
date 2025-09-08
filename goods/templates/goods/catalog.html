@@ -7,7 +7,7 @@
     <div class="filters">
         <div class="catalog-dropdown">
             <button>Фильтры</button>
-            <form class="dropdown-menu" method="get" action="">
+            <form class="dropdown-menu" method="get" action="{% url "catalog:index" slug_url %}">
                 <div class="form-check">
                     <input type="checkbox" name="on_sale" id="onSale" value="on">
                     <label for="onSale">Товары по акции</label>
@@ -29,6 +29,8 @@
             </form>
         </div>
     </div>
+
+    <br>
 
     <div class="catalog-container">
         <div class="catalog-grid">
