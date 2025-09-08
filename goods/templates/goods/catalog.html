@@ -67,16 +67,39 @@
         </div>
     </div>
 
-    <center>
-    <div class="pagination">
-        <a href="#" class="page-link disabled">Предыдущая</a>
-        <a href="#" class="page-link active">1</a>
-        <a href="#" class="page-link">2</a>
-        <a href="#" class="page-link">3</a>
-        <a href="#" class="page-link">Вперед</a>
-    </div>
-    </center>
+<div class="pagination">
+    <ul>
+        <!-- Кнопка "Предыдущая" -->
+        <li class="{% if not goods.has_previous %}disabled{% endif %}">
+            <a href="{% if goods.has_previous %}
+                        {% url 'catalog:index' slug_url goods.previous_page_number %}
+                     {% else %}# {% endif %}" 
+               class="page-link {% if not goods.has_previous %}disabled{% endif %}">
+                Предыдущая
+            </a>
+        </li>
 
+        <!-- Номера страниц -->
+        {% for page in goods.paginator.page_range %}
+        <li class="{% if goods.number == page %}active{% endif %}">
+            <a href="{% url 'catalog:index' slug_url page %}" 
+               class="page-link {% if goods.number == page %}active{% endif %}">
+                {{ page }}
+            </a>
+        </li>
+        {% endfor %}
+
+        <!-- Кнопка "Вперед" -->
+        <li class="{% if not goods.has_next %}disabled{% endif %}">
+            <a href="{% if goods.has_next %}
+                        {% url 'catalog:index' slug_url goods.next_page_number %}
+                     {% else %}# {% endif %}" 
+               class="page-link {% if not goods.has_next %}disabled{% endif %}">
+                Вперед
+            </a>
+        </li>
+    </ul>
+</div>
 
 </div>
 {% endblock content %}

@@ -121,39 +121,57 @@
     flex-shrink: 0;
 }
 
-/* Pagination */
+/* Pagination container */
 .pagination {
     display: flex;
-    justify-content: center; 
-    gap: 10px; 
+    justify-content: center;
     margin: 20px 0;
     font-family: Arial, sans-serif;
 }
 
+.pagination ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 8px;
+    margin: 0;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+/* Стили ссылок */
 .page-link {
+    display: inline-block;
     text-decoration: none;
     color: #333;
-    padding: 8px 16px;
+    padding: 10px 16px;
     border: 1px solid #ccc;
     border-radius: 6px;
     transition: all 0.3s ease;
     background-color: #f9f9f9;
+    min-width: 36px;
+    text-align: center;
 }
 
-.page-link:hover {
+/* Hover эффект для ссылок */
+.page-link:not(.disabled):hover {
     background-color: #007BFF;
     color: #fff;
     border-color: #007BFF;
 }
 
-.page-link.active {
+/* Активная страница */
+li.active .page-link {
     background-color: #007BFF;
     color: #fff;
     border-color: #007BFF;
     cursor: default;
 }
 
-.page-link.disabled {
+/* Заблокированные ссылки */
+li.disabled .page-link {
     color: #aaa;
     border-color: #eee;
     cursor: not-allowed;
