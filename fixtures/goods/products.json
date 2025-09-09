@@ -8,7 +8,7 @@
             "description": "Легкие и удобные кроссовки Discovery mesh станут отличным выбором для несложных походов и увлекательных летних путешествий.",
             "image": "goods_images/krossovki-muzhskie-outventure-discovery.jpg",
             "price": "1999.00",
-            "discount": "0.00",
+            "discount": "25.00",
             "quantity": 10,
             "category": 4
         }
@@ -50,7 +50,7 @@
             "description": "Иногда классика — лучший выбор. Кеды в теннисном стиле от adidas станут идеальной основой для комфортных образов на каждый день.",
             "image": "goods_images/kedy-muzhskie-adidas-grand-court-alpha-00-s.jpg",
             "price": "6999.00",
-            "discount": "0.00",
+            "discount": "47.00",
             "quantity": 3,
             "category": 5
         }
@@ -92,7 +92,7 @@
             "description": "Универсальные полуботинки Crestwood от Columbia разработаны специально для походов и активного отдыха на природе.",
             "image": "goods_images/polubotinki-muzhskie-columbia-crestwood.jpg",
             "price": "8999.00",
-            "discount": "0.00",
+            "discount": "2.50",
             "quantity": 10,
             "category": 7
         }
@@ -134,7 +134,7 @@
             "description": "Сандалии Northland — отличный вариант для прогулок и путешествий в теплое время года.",
             "image": "goods_images/sandalii-muzhskie-northland-wandern.jpg",
             "price": "3919.00",
-            "discount": "0.00",
+            "discount": "90.00",
             "quantity": 900,
             "category": 8
         }
