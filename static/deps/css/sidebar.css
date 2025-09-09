@@ -31,30 +31,15 @@
 
 /* Label для раскрытия */
 .dropdown-label {
-    cursor: pointer;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.6rem 0.8rem;
     border-radius: 6px;
     background-color: #dfdfdf;
-    color: #004085;
-    font-weight: 600;
-    transition: background 0.2s, color 0.2s;
 }
 
 .dropdown-label:hover {
     background-color: #ffffff;
-}
-
-/* Вложенное меню */
-.dropdown-menu {
-    list-style: none;
-    padding-left: 1rem;
-    margin-top: 0.5rem;
-    display: none;
-    flex-direction: column;
-    gap: 0.4rem;
 }
 
 /* Показываем меню, когда чекбокс активен */

@@ -5,42 +5,48 @@
 {% block content %}
 <div class="content">
 
-    <div class="filters">
-        <div class="catalog-dropdown">
-            <button>Фильтры</button>
+    <div class="catalog-wrapper">
+        <!-- Фильтры слева -->
+        <aside class="filters">
+            <div class="catalog-dropdown">
+                <button>Фильтры</button>
                 <form class="dropdown-menu" method="get" 
-                    action="{% if request.GET.q %}{% url 'catalog:search' %}{% else %}{% url 'catalog:index' slug_url %}{% endif %}">
-                <div class="form-check">
-                    <input type="checkbox" name="on_sale" id="onSale" value="on" {% if request.GET.on_sale == 'on' %} checked {% endif %}>
+                      action="{% if request.GET.q %}{% url 'catalog:search' %}{% else %}{% url 'catalog:index' slug_url %}{% endif %}">
                     
-                    {% if request.GET.q %}
-                    <input type='hidden' name='q' value='{{ request.GET.q} }'>
-                    {% endif %}
-                        
-                    <label for="onSale">Товары по акции</label>
-                </div>
-                <p>Сортировать:</p>
-                <div class="form-check">
-                    <input type="radio" name="order_by" id="defaultOrder" value="default" checked {% if not request.GET.order_by or request.GET.order_by == 'default' %} checked {% endif %}>
-                    <label for="defaultOrder">По умолчанию</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" name="order_by" id="priceAsc" value="price" {% if request.GET.order_by == 'price' %} checked {% endif %}>
-                    <label for="priceAsc">От дешевых к дорогим</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" name="order_by" id="priceDesc" value="-price" {% if request.GET.order_by == '-price' %} checked {% endif %}>
-                    <label for="priceDesc">От дорогих к дешевым</label>
-                </div>
-                <button type="submit">Применить</button>
-            </form>
-        </div>
-    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="on_sale" id="onSale" value="on"
+                               {% if request.GET.on_sale == 'on' %} checked {% endif %}>
+                        {% if request.GET.q %}
+                            <input type="hidden" name="q" value="{{ request.GET.q }}">
+                        {% endif %}
+                        <label for="onSale">Товары по акции</label>
+                    </div>
 
-    <br>
+                    <p>Сортировать:</p>
 
-    <div class="catalog-container">
-        <div class="catalog-grid">
+                    <div class="form-check">
+                        <input type="radio" name="order_by" id="defaultOrder" value="default"
+                               {% if not request.GET.order_by or request.GET.order_by == 'default' %} checked {% endif %}>
+                        <label for="defaultOrder">По умолчанию</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="order_by" id="priceAsc" value="price"
+                               {% if request.GET.order_by == 'price' %} checked {% endif %}>
+                        <label for="priceAsc">От дешевых к дорогим</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="order_by" id="priceDesc" value="-price"
+                               {% if request.GET.order_by == '-price' %} checked {% endif %}>
+                        <label for="priceDesc">От дорогих к дешевым</label>
+                    </div>
+
+                    <button type="submit">Применить</button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Карточки товаров справа -->
+        <section class="catalog-grid">
             {% for product in goods %}
             <div class="catalog-card">
                 <div class="image-wrapper">
@@ -49,18 +55,17 @@
                     {% else %}
                         <img src="{% static 'deps/images/not_found_image.png' %}" alt="Изображение отсутствует">
                     {% endif %}
-
                     {% if product.discount %}
-                        <span class="badge discount-badge">-{{ product.discount }}%</span>
+                        <span class="discount-badge">-{{ product.discount }}%</span>
                     {% endif %}
                 </div>
-
                 <div class="card-body">
-                    
-                    <p class="card-title"><a href="{% url "catalog:product" product.slug %}">{{ product.name|truncatechars:25 }}</a></p>
+                    <p class="card-title">
+                        <a href="{% url "catalog:product" product.slug %}">{{ product.name|truncatechars:25 }}</a>
+                    </p>
                     <p class="card-text">{{ product.description|truncatechars:65}}</p>
                     <p class="card-text"><b>id: </b>{{ product.display_id }}</p>
-                    
+
                     <div class="item-row">
                         <div class="price-block">
                             {% if product.discount %}
@@ -75,40 +80,31 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
+        </section>
     </div>
 
-<div class="pagination">
-    <ul>
-        <!-- Кнопка "Предыдущая" -->
-        <li class="{% if not goods.has_previous %}disabled{% endif %}">
-            <a href="{% if goods.has_previous %}?{% change_params page=goods.previous_page_number %}{% else %}# {% endif %}" 
-               class="page-link">
-                Предыдущая
-            </a>
-        </li>
+    <!-- Пагинация -->
+    <div class="pagination">
+        <ul>
+            <li class="{% if not goods.has_previous %}disabled{% endif %}">
+                <a href="{% if goods.has_previous %}?{% change_params page=goods.previous_page_number %}{% else %}# {% endif %}" 
+                   class="page-link">Предыдущая</a>
+            </li>
 
-        <!-- Номера страниц (текущая ±2) -->
-        {% for page in goods.paginator.page_range %}
-            {% if page >= goods.number|add:"-2" and page <= goods.number|add:"2" %}
-                <li class="{% if goods.number == page %}active{% endif %}">
-                    <a href="?{% change_params page=page %}" class="page-link">
-                        {{ page }}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
+            {% for page in goods.paginator.page_range %}
+                {% if page >= goods.number|add:"-2" and page <= goods.number|add:"2" %}
+                    <li class="{% if goods.number == page %}active{% endif %}">
+                        <a href="?{% change_params page=page %}" class="page-link">{{ page }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
 
-        <!-- Кнопка "Вперед" -->
-        <li class="{% if not goods.has_next %}disabled{% endif %}">
-            <a href="{% if goods.has_next %}?{% change_params page=goods.next_page_number %}{% else %}# {% endif %}" 
-               class="page-link">
-                Вперед
-            </a>
-        </li>
-    </ul>
-</div>
-
+            <li class="{% if not goods.has_next %}disabled{% endif %}">
+                <a href="{% if goods.has_next %}?{% change_params page=goods.next_page_number %}{% else %}# {% endif %}" 
+                   class="page-link">Вперед</a>
+            </li>
+        </ul>
+    </div>
 
 </div>
 {% endblock content %}
