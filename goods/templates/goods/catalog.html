@@ -4,6 +4,14 @@
 
 {% block content %}
 <div class="content">
+<center>
+    {% if request.GET.q %}
+        <p class="card-text">Результаты поиска по запросу: <b>{{ request.GET.q }}</b></p>
+    {% if not goods %}
+        <p class="card-text">По запросу ничего не найдено{{ request.GET.q }}</p>
+    {% endif %}   
+    {% endif %}
+</center>
 
     <div class="catalog-wrapper">
         <!-- Фильтры слева -->
@@ -47,6 +55,7 @@
 
         <!-- Карточки товаров справа -->
         <section class="catalog-grid">
+            
             {% for product in goods %}
             <div class="catalog-card">
                 <div class="image-wrapper">
@@ -60,10 +69,34 @@
                     {% endif %}
                 </div>
                 <div class="card-body">
-                    <p class="card-title">
-                        <a href="{% url "catalog:product" product.slug %}">{{ product.name|truncatechars:25 }}</a>
+
+                    
+                    {% autoescape off %}
+                        <a href="{% url "catalog:product" product.slug %}">
+                            <p class="card-title">
+                                {% if product.headline %}
+                                    {{product.headline }}
+                                {% else %}
+                                    {{product.name|truncatechars:25 }}
+                                {% endif %}
+                            </p> 
+                        </a>        
+                    {% endautoescape %}
+                    
+                              
+                    
+                    <p class="card-text">
+
+                        {% autoescape off %}
+                            {% if product.bodyline %}
+                                {{product.bodyline }}
+                            {% else %}
+                                {{product.description|truncatechars:65 }}
+                            {% endif %}
+
+                    {% endautoescape %}
+
                     </p>
-                    <p class="card-text">{{ product.description|truncatechars:65}}</p>
                     <p class="card-text"><b>id: </b>{{ product.display_id }}</p>
 
                     <div class="item-row">
