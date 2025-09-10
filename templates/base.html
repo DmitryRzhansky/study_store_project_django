@@ -59,15 +59,15 @@
                         </ul>
                     </li>
                     <li><a href="carts/cart.html">Корзина</a></li>
-                    <li><a href="users/login.html">Войти</a></li>
+                    <li><a href="{% url "users:login" %}">Войти</a></li>
                     <li class="nav-item dropdown">
                         <span>Мой профиль ▾</span>
                         <ul class="dropdown-menu">
                             <li><a href="carts/cart.html">Корзина</a></li>
-                            <li><a href="users/profile.html">Личный кабинет</a></li>
+                            <li><a href="{% url "users:profile" %}">Личный кабинет</a></li>
                             <li><a href="{% url "admin:index" %}">Админ панель</a></li>
                             <li><hr></li>
-                            <li><a href="#">Выйти</a></li>
+                            <li><a href="{% url "users:logout" %}">Выйти</a></li>
                         </ul>
                     </li>
                 </ul>

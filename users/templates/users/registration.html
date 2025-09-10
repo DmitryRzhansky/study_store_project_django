@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="content">
+    <div class="card-wrapper">
+        <div class="card" style="max-width: 700px; width: 100%;">
+            <div class="card-body">
+                <h2 class="card-title" style="text-align:center;">Регистрация</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="firstName">Имя*</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Фамилия*</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="Введите вашу фамилию" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Имя пользователя*</label>
+                        <input type="text" id="username" class="form-control" placeholder="Введите имя пользователя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" class="form-control" placeholder="youremail@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password1">Пароль*</label>
+                        <input type="password" id="password1" class="form-control" placeholder="Введите пароль" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password2">Подтверждение пароля*</label>
+                        <input type="password" id="password2" class="form-control" placeholder="Подтвердите пароль" required>
+                    </div>
+                    <button type="submit" class="btn add-to-cart w-100">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

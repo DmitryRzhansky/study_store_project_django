@@ -202,3 +202,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+static/deps/images/icons/facebook.svg
+static/deps/images/icons/github.svg
+.gitignore
