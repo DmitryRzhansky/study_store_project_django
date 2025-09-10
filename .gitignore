@@ -205,3 +205,4 @@ __marimo__/
 static/deps/images/icons/facebook.svg
 static/deps/images/icons/github.svg
 .gitignore
+users/migrations/0001_initial.py
