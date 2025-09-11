@@ -1,0 +1,167 @@
+/* Общий стиль страницы */
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 40px 20px;
+    background-color: #f5f6fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Карточка профиля */
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #e0e0e0;
+    transition: transform 0.3s;
+}
+
+.profile-avatar img:hover {
+    transform: scale(1.05);
+}
+
+.avatar-input {
+    margin-top: 10px;
+}
+
+/* Форма профиля */
+.profile-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.input-group input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0,123,255,0.3);
+    outline: none;
+}
+
+.btn-save {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+    background-color: #0056b3;
+}
+
+/* Секция заказов */
+.orders-section {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.orders-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+/* Карточка заказа */
+.order-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #f1f1f1;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.order-header .status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status.in-process {
+    background-color: #ff9800;
+}
+
+.status.delivered {
+    background-color: #4caf50;
+}
+
+/* Таблица товаров */
+.order-body {
+    padding: 15px 20px;
+}
+
+.order-body table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-body th,
+.order-body td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.order-body th {
+    background-color: #f9f9f9;
+    font-weight: 600;
+}
+
+.order-body tr:nth-child(even) {
+    background-color: #fafafa;
+}
