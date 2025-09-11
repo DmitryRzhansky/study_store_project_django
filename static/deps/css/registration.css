@@ -1,0 +1,56 @@
+/* Стили для карточки регистрации */
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: -90px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Стили для формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+.form-group input {
+    padding: 10px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+form button {
+    margin-top: 15px;
+}
