@@ -1,0 +1,9 @@
+{% load static %}
+
+{% if form.non_field_errors %}
+<div class="notifications-container" style="margin-top: 2rem;">
+    <div class="notification custom-shadow error-message">
+        <p>{{ form.non_field_errors }}</p>
+    </div>
+</div>
+{% endif %}

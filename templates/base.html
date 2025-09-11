@@ -32,6 +32,9 @@
     <!-- Модальные окна -->
     <link rel="stylesheet" href="{% static 'deps/css/modal.css' %}">
 
+    <!-- ERRORS -->
+    <link rel="stylesheet" href="{% static 'deps/css/errors.css' %}">
+
     <!-- Анимации -->
     <link rel="stylesheet" href="{% static 'deps/css/animations.css' %}">
 
@@ -105,9 +108,8 @@
 
         <div class="content">
             
-            {% block content %}
-                
-            {% endblock content %}
+            {% include "includes/notifications.html" %}
+            {% block content %}{% endblock content %}
                 
         </div>
     </section>
