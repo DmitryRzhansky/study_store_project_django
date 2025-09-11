@@ -23,3 +23,48 @@
     margin: 0;
     padding: 0;
 }
+
+/* Общие стили для уведомлений */
+.notification {
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 15px auto;
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 0.5s ease, fadeOut 0.5s ease 4.5s;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Тень (дополнительно к custom-shadow) */
+.custom-shadow {
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Успешное сообщение */
+.notification.success {
+    background: #e6f9f0;
+    color: #0f5132;
+    border: 1px solid #a3e4c2;
+}
+
+/* Ошибки и предупреждения */
+.notification.error {
+    background: #fdecea;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+/* Анимации появления/исчезновения */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+

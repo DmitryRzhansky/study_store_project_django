@@ -7,3 +7,21 @@
     </div>
 </div>
 {% endif %}
+
+<div class="notifications-container" style="margin-top: 2rem;">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="notification custom-shadow success" role="alert">
+                    {{ message }}
+                </div>
+            {% elif message.tags == 'warning' or message.tags == 'error' %}
+                <div class="notification custom-shadow error" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <div id="jq-notification" class="notification custom-shadow" style="display: none;"></div>
+    {% endif %}
+</div>
